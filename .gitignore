@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Test artifacts
+test-results/
+playwright-report/
+allure-results/
+allure-report/
+screenshots/
+videos/
+logs/
+
+# Environment variables
+.env
+
+# Build output
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright
+playwright/.cache/
+
+# Coverage
+coverage/
+
+# Temporary files
+*.log
+*.tmp

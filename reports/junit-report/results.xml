@@ -1,0 +1,981 @@
+<testsuites id="" name="" tests="34" failures="13" skipped="0" errors="0" time="318.921508">
+<testsuite name="api\advanced-api.spec.ts" timestamp="2026-03-11T12:00:12.942Z" hostname="chromium" tests="7" failures="7" skipped="0" time="3.302" errors="0">
+<testcase name="Advanced API Tests › should login and receive token" classname="api\advanced-api.spec.ts" time="0.836">
+<failure message="advanced-api.spec.ts:27:7 should login and receive token" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:27:7 › Advanced API Tests › should login and receive token ─
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      37 |     });
+      38 |     
+    > 39 |     expect(response.status).toBe(200);
+         |                             ^
+      40 |     expect(response.body).toHaveProperty('token');
+      41 |     
+      42 |     // Store token for future requests
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:39:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:30:20 [[32MINFO[39M]: API context initialized
+2026-03-11 17:30:20 [[32MINFO[39M]: STEP: Authenticating user
+2026-03-11 17:30:20 [[32MINFO[39M]: POST request to: /login
+2026-03-11 17:30:21 [[32MINFO[39M]: POST response status: 404
+2026-03-11 17:30:21 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="Advanced API Tests › should perform complete CRUD operations" classname="api\advanced-api.spec.ts" time="0.404">
+<failure message="advanced-api.spec.ts:51:7 should perform complete CRUD operations" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:51:7 › Advanced API Tests › should perform complete CRUD operations 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 404
+
+      59 |     });
+      60 |     
+    > 61 |     expect(createResponse.status).toBe(201);
+         |                                   ^
+      62 |     userId = createResponse.body.id;
+      63 |     Logger.info(`User created with ID: ${userId}`);
+      64 |     
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:61:35
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:30:29 [[32MINFO[39M]: API context initialized
+2026-03-11 17:30:29 [[32MINFO[39M]: STEP: Step 1: Creating user
+2026-03-11 17:30:29 [[32MINFO[39M]: POST request to: /users
+2026-03-11 17:30:30 [[32MINFO[39M]: POST response status: 404
+2026-03-11 17:30:30 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="Advanced API Tests › should validate response schema structure" classname="api\advanced-api.spec.ts" time="0.407">
+<failure message="advanced-api.spec.ts:94:7 should validate response schema structure" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:94:7 › Advanced API Tests › should validate response schema structure 
+
+    Error: expect(received).toHaveProperty(path)
+
+    Expected path: "data"
+    Received path: []
+
+    Received value: {"docs_url": "https://app.reqres.in/docs", "error": "endpoint_not_found", "hint": "API endpoints start with /api/ (admin) or /app/ (app user). Check the docs for the full reference.", "message": "The endpoint GET /users/2 does not exist."}
+
+       98 |     
+       99 |     // Schema validation
+    > 100 |     expect(response.body).toHaveProperty('data');
+          |                           ^
+      101 |     expect(response.body.data).toMatchObject({
+      102 |       id: expect.any(Number),
+      103 |       email: expect.any(String),
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:100:27
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:30:38 [[32MINFO[39M]: API context initialized
+2026-03-11 17:30:38 [[32MINFO[39M]: STEP: Validating API response schema
+2026-03-11 17:30:38 [[32MINFO[39M]: GET request to: /users/2
+2026-03-11 17:30:38 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:30:38 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="Advanced API Tests › should respond within acceptable time" classname="api\advanced-api.spec.ts" time="0.41">
+<failure message="advanced-api.spec.ts:119:7 should respond within acceptable time" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:119:7 › Advanced API Tests › should respond within acceptable time 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      126 |     const responseTime = endTime - startTime;
+      127 |     
+    > 128 |     expect(response.status).toBe(200);
+          |                             ^
+      129 |     expect(responseTime).toBeLessThan(2000); // Should respond within 2 seconds
+      130 |     
+      131 |     Logger.info(`Response time: ${responseTime}ms`);
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:128:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:30:46 [[32MINFO[39M]: API context initialized
+2026-03-11 17:30:46 [[32MINFO[39M]: STEP: Testing API response time
+2026-03-11 17:30:46 [[32MINFO[39M]: GET request to: /users
+2026-03-11 17:30:46 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:30:47 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="Advanced API Tests › should handle pagination correctly" classname="api\advanced-api.spec.ts" time="0.404">
+<failure message="advanced-api.spec.ts:137:7 should handle pagination correctly" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:137:7 › Advanced API Tests › should handle pagination correctly 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      140 |     // Get page 1
+      141 |     const page1Response = await apiHelper.get('/users?page=1');
+    > 142 |     expect(page1Response.status).toBe(200);
+          |                                  ^
+      143 |     expect(page1Response.body.page).toBe(1);
+      144 |     
+      145 |     // Get page 2
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:142:34
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:30:54 [[32MINFO[39M]: API context initialized
+2026-03-11 17:30:54 [[32MINFO[39M]: STEP: Testing pagination
+2026-03-11 17:30:54 [[32MINFO[39M]: GET request to: /users?page=1
+2026-03-11 17:30:54 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:30:54 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="Advanced API Tests › should validate array responses" classname="api\advanced-api.spec.ts" time="0.421">
+<failure message="advanced-api.spec.ts:159:7 should validate array responses" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:159:7 › Advanced API Tests › should validate array responses 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      162 |     const response = await apiHelper.get('/users?page=1');
+      163 |     
+    > 164 |     expect(response.status).toBe(200);
+          |                             ^
+      165 |     expect(response.body.data).toBeInstanceOf(Array);
+      166 |     expect(response.body.data.length).toBeGreaterThan(0);
+      167 |     
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:164:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:03 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:03 [[32MINFO[39M]: STEP: Validating array data
+2026-03-11 17:31:03 [[32MINFO[39M]: GET request to: /users?page=1
+2026-03-11 17:31:03 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:31:03 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="Advanced API Tests › should handle invalid data in POST request" classname="api\advanced-api.spec.ts" time="0.42">
+<failure message="advanced-api.spec.ts:181:7 should handle invalid data in POST request" type="FAILURE">
+<![CDATA[  [chromium] › api\advanced-api.spec.ts:181:7 › Advanced API Tests › should handle invalid data in POST request 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 404
+
+      189 |     });
+      190 |     
+    > 191 |     expect(response.status).toBe(400);
+          |                             ^
+      192 |     expect(response.body).toHaveProperty('error');
+      193 |     
+      194 |     Logger.info('Error handled correctly');
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\advanced-api.spec.ts:191:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:11 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:11 [[32MINFO[39M]: STEP: Testing error handling with invalid data
+2026-03-11 17:31:11 [[32MINFO[39M]: POST request to: /register
+2026-03-11 17:31:11 [[32MINFO[39M]: POST response status: 404
+2026-03-11 17:31:11 [[32MINFO[39M]: API context disposed
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api\api.spec.ts" timestamp="2026-03-11T12:00:12.942Z" hostname="chromium" tests="7" failures="5" skipped="0" time="2.722" errors="0">
+<testcase name="API Tests › should fetch users via GET request" classname="api\api.spec.ts" time="0.405">
+<failure message="api.spec.ts:29:7 should fetch users via GET request" type="FAILURE">
+<![CDATA[  [chromium] › api\api.spec.ts:29:7 › API Tests › should fetch users via GET request ───────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      34 |     
+      35 |     // Assertions
+    > 36 |     expect(response.status).toBe(200);
+         |                             ^
+      37 |     expect(response.body).toHaveProperty('data');
+      38 |     expect(response.body.data).toBeInstanceOf(Array);
+      39 |     expect(response.body.data.length).toBeGreaterThan(0);
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\api.spec.ts:36:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:20 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:20 [[32MINFO[39M]: API Helper initialized
+2026-03-11 17:31:20 [[32MINFO[39M]: STEP: Sending GET request to /users
+2026-03-11 17:31:20 [[32MINFO[39M]: GET request to: /users?page=1
+2026-03-11 17:31:20 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:31:21 [[32MINFO[39M]: API context disposed
+2026-03-11 17:31:21 [[32MINFO[39M]: API Helper disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="API Tests › should create user via POST request" classname="api\api.spec.ts" time="0.439">
+<failure message="api.spec.ts:47:7 should create user via POST request" type="FAILURE">
+<![CDATA[  [chromium] › api\api.spec.ts:47:7 › API Tests › should create user via POST request ──────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 404
+
+      59 |     
+      60 |     // Assertions
+    > 61 |     expect(response.status).toBe(201);
+         |                             ^
+      62 |     expect(response.body).toHaveProperty('id');
+      63 |     expect(response.body.name).toBe('John Doe');
+      64 |     expect(response.body.job).toBe('QA Engineer');
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\api.spec.ts:61:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:28 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:28 [[32MINFO[39M]: API Helper initialized
+2026-03-11 17:31:28 [[32MINFO[39M]: STEP: Sending POST request to create user
+2026-03-11 17:31:28 [[32MINFO[39M]: POST request to: /users
+2026-03-11 17:31:29 [[32MINFO[39M]: POST response status: 404
+2026-03-11 17:31:29 [[32MINFO[39M]: API context disposed
+2026-03-11 17:31:29 [[32MINFO[39M]: API Helper disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="API Tests › should update user via PUT request" classname="api\api.spec.ts" time="0.407">
+<failure message="api.spec.ts:73:7 should update user via PUT request" type="FAILURE">
+<![CDATA[  [chromium] › api\api.spec.ts:73:7 › API Tests › should update user via PUT request ───────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      85 |     
+      86 |     // Assertions
+    > 87 |     expect(response.status).toBe(200);
+         |                             ^
+      88 |     expect(response.body.name).toBe('John Updated');
+      89 |     expect(response.body.job).toBe('Senior QA Engineer');
+      90 |     
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\api.spec.ts:87:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:37 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:37 [[32MINFO[39M]: API Helper initialized
+2026-03-11 17:31:37 [[32MINFO[39M]: STEP: Sending PUT request to update user
+2026-03-11 17:31:37 [[32MINFO[39M]: PUT request to: /users/2
+2026-03-11 17:31:38 [[32MINFO[39M]: PUT response status: 404
+2026-03-11 17:31:38 [[32MINFO[39M]: API context disposed
+2026-03-11 17:31:38 [[32MINFO[39M]: API Helper disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="API Tests › should delete user via DELETE request" classname="api\api.spec.ts" time="0.41">
+<failure message="api.spec.ts:97:7 should delete user via DELETE request" type="FAILURE">
+<![CDATA[  [chromium] › api\api.spec.ts:97:7 › API Tests › should delete user via DELETE request ────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 204
+    Received: 404
+
+      102 |     
+      103 |     // Assertions
+    > 104 |     expect(response.status).toBe(204);
+          |                             ^
+      105 |     
+      106 |     Logger.info('User deleted successfully');
+      107 |   });
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\api.spec.ts:104:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:45 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:45 [[32MINFO[39M]: API Helper initialized
+2026-03-11 17:31:45 [[32MINFO[39M]: STEP: Sending DELETE request
+2026-03-11 17:31:45 [[32MINFO[39M]: DELETE request to: /users/2
+2026-03-11 17:31:46 [[32MINFO[39M]: DELETE response status: 404
+2026-03-11 17:31:46 [[32MINFO[39M]: API context disposed
+2026-03-11 17:31:46 [[32MINFO[39M]: API Helper disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="API Tests › should fetch single user by ID" classname="api\api.spec.ts" time="0.413">
+<failure message="api.spec.ts:112:7 should fetch single user by ID" type="FAILURE">
+<![CDATA[  [chromium] › api\api.spec.ts:112:7 › API Tests › should fetch single user by ID ──────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      117 |     
+      118 |     // Assertions
+    > 119 |     expect(response.status).toBe(200);
+          |                             ^
+      120 |     expect(response.body.data).toHaveProperty('id', 2);
+      121 |     expect(response.body.data).toHaveProperty('email');
+      122 |     expect(response.body.data).toHaveProperty('first_name');
+        at D:\Workspace\playwright-enterprise-framework\src\tests\api\api.spec.ts:119:29
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:31:54 [[32MINFO[39M]: API context initialized
+2026-03-11 17:31:54 [[32MINFO[39M]: API Helper initialized
+2026-03-11 17:31:54 [[32MINFO[39M]: STEP: Fetching user by ID
+2026-03-11 17:31:54 [[32MINFO[39M]: GET request to: /users/2
+2026-03-11 17:31:54 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:31:55 [[32MINFO[39M]: API context disposed
+2026-03-11 17:31:55 [[32MINFO[39M]: API Helper disposed
+]]>
+</system-out>
+</testcase>
+<testcase name="API Tests › should verify response headers" classname="api\api.spec.ts" time="0.41">
+<system-out>
+<![CDATA[2026-03-11 17:32:02 [[32MINFO[39M]: API context initialized
+2026-03-11 17:32:02 [[32MINFO[39M]: API Helper initialized
+2026-03-11 17:32:02 [[32MINFO[39M]: STEP: Checking response headers
+2026-03-11 17:32:02 [[32MINFO[39M]: GET request to: /users
+2026-03-11 17:32:03 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:32:03 [[32MINFO[39M]: Headers verified
+]]>
+</system-out>
+</testcase>
+<testcase name="API Tests › should handle 404 error gracefully" classname="api\api.spec.ts" time="0.238">
+<system-out>
+<![CDATA[2026-03-11 17:32:03 [[32MINFO[39M]: STEP: Testing 404 error handling
+2026-03-11 17:32:03 [[32MINFO[39M]: GET request to: /users/999999
+2026-03-11 17:32:03 [[32MINFO[39M]: GET response status: 404
+2026-03-11 17:32:03 [[32MINFO[39M]: 404 error handled correctly
+2026-03-11 17:32:03 [[32MINFO[39M]: API context disposed
+2026-03-11 17:32:03 [[32MINFO[39M]: API Helper disposed
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="checkout\checkout.spec.ts" timestamp="2026-03-11T12:00:12.942Z" hostname="chromium" tests="11" failures="1" skipped="0" time="133.132" errors="0">
+<testcase name="Checkout Tests › should add product to cart successfully" classname="checkout\checkout.spec.ts" time="9.704">
+<system-out>
+<![CDATA[2026-03-11 17:32:06 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:32:06 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:32:06 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:32:06 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:32:06 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:32:06 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:32:06 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:32:08 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:32:08 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:32:09 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:32:10 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:32:11 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:32:11 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:32:11 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:32:11 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:32:13 [[32MINFO[39M]: STEP: Getting cart badge count
+2026-03-11 17:32:13 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:32:13 [[32MINFO[39M]: Retrieved text: 1
+2026-03-11 17:32:13 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:32:14 [[32MINFO[39M]: STEP: Checking if item is in cart: Sauce Labs Backpack
+2026-03-11 17:32:14 [[32MINFO[39M]: STEP: Getting cart item names
+2026-03-11 17:32:14 [[32MINFO[39M]: ========== TEST END: should add product to cart successfully - PASSED ==========
+2026-03-11 17:32:14 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:32:14 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:32:14 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:32:14 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should add multiple products to cart" classname="checkout\checkout.spec.ts" time="10.82">
+<system-out>
+<![CDATA[2026-03-11 17:32:15 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:32:15 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:32:15 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:32:15 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:32:15 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:32:15 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:32:15 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:32:17 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:32:17 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:32:18 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:32:19 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:32:20 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:32:20 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:32:20 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:32:20 [[32MINFO[39M]: STEP: Adding 3 products to cart
+2026-03-11 17:32:20 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:32:21 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Bike Light
+2026-03-11 17:32:22 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Bolt T-Shirt
+2026-03-11 17:32:23 [[32MINFO[39M]: STEP: Getting cart badge count
+2026-03-11 17:32:23 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:32:23 [[32MINFO[39M]: Retrieved text: 3
+2026-03-11 17:32:23 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:32:24 [[32MINFO[39M]: STEP: Getting cart items count
+2026-03-11 17:32:24 [[32MINFO[39M]: ========== TEST END: should add multiple products to cart - PASSED ==========
+2026-03-11 17:32:24 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:32:24 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:32:24 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:32:24 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should remove product from cart" classname="checkout\checkout.spec.ts" time="10.742">
+<system-out>
+<![CDATA[2026-03-11 17:32:27 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:32:27 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:32:27 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:32:27 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:32:27 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:32:27 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:32:27 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:32:29 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:32:29 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:32:30 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:32:31 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:32:32 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:32:32 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:32:32 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:32:32 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:32:33 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:32:34 [[32MINFO[39M]: STEP: Removing item from cart: Sauce Labs Backpack
+2026-03-11 17:32:35 [[32MINFO[39M]: STEP: Checking if cart is empty
+2026-03-11 17:32:35 [[32MINFO[39M]: STEP: Getting cart items count
+2026-03-11 17:32:35 [[32MINFO[39M]: ========== TEST END: should remove product from cart - PASSED ==========
+2026-03-11 17:32:35 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:32:35 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:32:35 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:32:35 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should complete checkout with single product" classname="checkout\checkout.spec.ts" time="14.946">
+<failure message="checkout.spec.ts:93:7 should complete checkout with single product" type="FAILURE">
+<![CDATA[  [chromium] › checkout\checkout.spec.ts:93:7 › Checkout Tests › should complete checkout with single product 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "THANK YOU FOR YOUR ORDER"
+    Received string:    "Thank you for your order!"
+
+      119 |     
+      120 |     const completionHeader = await checkoutPage.getCompletionHeader();
+    > 121 |     expect(completionHeader).toContain('THANK YOU FOR YOUR ORDER');
+          |                              ^
+      122 |   });
+      123 |
+      124 |   /**
+        at D:\Workspace\playwright-enterprise-framework\src\tests\checkout\checkout.spec.ts:121:30
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\checkout-checkout-Checkout-d985e-heckout-with-single-product-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\..\test-results\checkout-checkout-Checkout-d985e-heckout-with-single-product-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\checkout-checkout-Checkout-d985e-heckout-with-single-product-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[2026-03-11 17:32:37 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:32:37 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:32:37 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:32:37 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:32:37 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:32:37 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:32:37 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:32:39 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:32:39 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:32:40 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:32:41 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:32:42 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:32:42 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:32:42 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:32:42 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:32:42 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:32:43 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:32:44 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:32:45 [[32MINFO[39M]: STEP: Filling checkout information
+2026-03-11 17:32:45 [[32MINFO[39M]: STEP: Entering first name: John
+2026-03-11 17:32:47 [[32MINFO[39M]: STEP: Entering last name: Doe
+2026-03-11 17:32:48 [[32MINFO[39M]: STEP: Entering postal code: 12345
+2026-03-11 17:32:49 [[32MINFO[39M]: STEP: Clicking continue button
+2026-03-11 17:32:50 [[32MINFO[39M]: STEP: Clicking finish button
+2026-03-11 17:32:51 [[32MINFO[39M]: STEP: Verifying order is complete
+2026-03-11 17:32:51 [[32MINFO[39M]: STEP: Getting completion header
+2026-03-11 17:32:51 [[32MINFO[39M]: Retrieved text: Thank you for your order!
+2026-03-11 17:32:51 [[32MINFO[39M]: STEP: Getting completion header
+2026-03-11 17:32:51 [[32MINFO[39M]: Retrieved text: Thank you for your order!
+2026-03-11 17:32:51 [[32MINFO[39M]: ========== TEST END: should complete checkout with single product - FAILED ==========
+2026-03-11 17:32:51 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:32:51 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:32:51 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:32:51 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:32:51 [[32MINFO[39M]: LoginPage fixture cleanup
+
+[[ATTACHMENT|..\..\test-results\checkout-checkout-Checkout-d985e-heckout-with-single-product-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\test-results\checkout-checkout-Checkout-d985e-heckout-with-single-product-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\checkout-checkout-Checkout-d985e-heckout-with-single-product-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should complete checkout with multiple products" classname="checkout\checkout.spec.ts" time="17.398">
+<system-out>
+<![CDATA[2026-03-11 17:33:06 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:33:06 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:33:06 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:33:06 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:33:06 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:33:06 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:33:06 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:33:08 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:33:08 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:33:09 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:33:10 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:33:11 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:33:11 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:11 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:33:11 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:33:11 [[32MINFO[39M]: STEP: Adding 3 products to cart
+2026-03-11 17:33:11 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:33:12 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Bike Light
+2026-03-11 17:33:13 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Fleece Jacket
+2026-03-11 17:33:14 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:33:15 [[32MINFO[39M]: STEP: Getting cart items count
+2026-03-11 17:33:15 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:33:16 [[32MINFO[39M]: STEP: Completing full checkout process
+2026-03-11 17:33:16 [[32MINFO[39M]: STEP: Filling checkout information
+2026-03-11 17:33:16 [[32MINFO[39M]: STEP: Entering first name: Jane
+2026-03-11 17:33:17 [[32MINFO[39M]: STEP: Entering last name: Smith
+2026-03-11 17:33:19 [[32MINFO[39M]: STEP: Entering postal code: 67890
+2026-03-11 17:33:20 [[32MINFO[39M]: STEP: Clicking continue button
+2026-03-11 17:33:21 [[32MINFO[39M]: STEP: Clicking finish button
+2026-03-11 17:33:22 [[32MINFO[39M]: STEP: Verifying order is complete
+2026-03-11 17:33:22 [[32MINFO[39M]: STEP: Getting completion header
+2026-03-11 17:33:22 [[32MINFO[39M]: Retrieved text: Thank you for your order!
+2026-03-11 17:33:22 [[32MINFO[39M]: ========== TEST END: should complete checkout with multiple products - PASSED ==========
+2026-03-11 17:33:22 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:33:22 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:33:22 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:33:22 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:33:22 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should show error for empty first name in checkout" classname="checkout\checkout.spec.ts" time="12.514">
+<system-out>
+<![CDATA[2026-03-11 17:33:23 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:33:23 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:33:23 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:33:23 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:33:23 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:33:23 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:33:23 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:33:25 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:33:25 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:33:26 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:33:27 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:33:28 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:33:28 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:28 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:33:28 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:33:28 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:33:29 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:33:30 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:33:31 [[32MINFO[39M]: STEP: Entering last name: Doe
+2026-03-11 17:33:32 [[32MINFO[39M]: STEP: Entering postal code: 12345
+2026-03-11 17:33:33 [[32MINFO[39M]: STEP: Clicking continue button
+2026-03-11 17:33:34 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:34 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:33:34 [[32MINFO[39M]: Retrieved text: Error: First Name is required
+2026-03-11 17:33:34 [[32MINFO[39M]: ========== TEST END: should show error for empty first name in checkout - PASSED ==========
+2026-03-11 17:33:34 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:33:34 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:33:34 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:33:34 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:33:34 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should show error for empty last name in checkout" classname="checkout\checkout.spec.ts" time="12.059">
+<system-out>
+<![CDATA[2026-03-11 17:33:35 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:33:35 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:33:35 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:33:35 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:33:35 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:33:35 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:33:35 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:33:37 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:33:37 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:33:38 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:33:39 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:33:40 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:33:40 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:40 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:33:40 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:33:40 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:33:41 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:33:42 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:33:43 [[32MINFO[39M]: STEP: Entering first name: John
+2026-03-11 17:33:44 [[32MINFO[39M]: STEP: Entering postal code: 12345
+2026-03-11 17:33:46 [[32MINFO[39M]: STEP: Clicking continue button
+2026-03-11 17:33:47 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:47 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:33:47 [[32MINFO[39M]: Retrieved text: Error: Last Name is required
+2026-03-11 17:33:47 [[32MINFO[39M]: ========== TEST END: should show error for empty last name in checkout - PASSED ==========
+2026-03-11 17:33:47 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:33:47 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:33:47 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:33:47 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:33:47 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should show error for empty postal code in checkout" classname="checkout\checkout.spec.ts" time="12.032">
+<system-out>
+<![CDATA[2026-03-11 17:33:48 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:33:48 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:33:48 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:33:48 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:33:48 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:33:48 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:33:48 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:33:49 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:33:49 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:33:50 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:33:51 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:33:52 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:33:52 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:52 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:33:52 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:33:52 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:33:53 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:33:54 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:33:56 [[32MINFO[39M]: STEP: Entering first name: John
+2026-03-11 17:33:57 [[32MINFO[39M]: STEP: Entering last name: Doe
+2026-03-11 17:33:58 [[32MINFO[39M]: STEP: Clicking continue button
+2026-03-11 17:33:59 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:33:59 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:33:59 [[32MINFO[39M]: Retrieved text: Error: Postal Code is required
+2026-03-11 17:33:59 [[32MINFO[39M]: ========== TEST END: should show error for empty postal code in checkout - PASSED ==========
+2026-03-11 17:33:59 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:33:59 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:33:59 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:33:59 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:33:59 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should cancel checkout and return to cart" classname="checkout\checkout.spec.ts" time="10.074">
+<system-out>
+<![CDATA[2026-03-11 17:34:00 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:00 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:34:00 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:34:00 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:34:00 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:34:00 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:00 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:01 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:34:01 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:34:02 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:03 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:05 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:34:05 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:05 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:34:05 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:34:05 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:34:06 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:34:07 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:34:08 [[32MINFO[39M]: STEP: Clicking cancel button
+2026-03-11 17:34:09 [[32MINFO[39M]: STEP: Verifying cart page is loaded
+2026-03-11 17:34:09 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:09 [[32MINFO[39M]: ========== TEST END: should cancel checkout and return to cart - PASSED ==========
+2026-03-11 17:34:09 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:34:09 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:34:09 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:34:09 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:34:09 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should continue shopping from cart" classname="checkout\checkout.spec.ts" time="9.296">
+<system-out>
+<![CDATA[2026-03-11 17:34:10 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:10 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:34:10 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:34:10 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:34:10 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:34:10 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:10 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:11 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:34:11 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:34:12 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:14 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:15 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:34:15 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:15 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:34:15 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:34:16 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:34:17 [[32MINFO[39M]: STEP: Clicking continue shopping button
+2026-03-11 17:34:18 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:34:18 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:18 [[32MINFO[39M]: ========== TEST END: should continue shopping from cart - PASSED ==========
+2026-03-11 17:34:18 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:34:18 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:34:18 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:34:18 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Checkout Tests › should display correct information in checkout overview" classname="checkout\checkout.spec.ts" time="13.547">
+<system-out>
+<![CDATA[2026-03-11 17:34:19 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:19 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:34:19 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:34:19 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:34:19 [[32MINFO[39M]: ========== TEST START: Checkout Test ==========
+2026-03-11 17:34:19 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:19 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:21 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:34:21 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:34:22 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:23 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:24 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:34:24 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:24 [[32MINFO[39M]: Initializing CartPage fixture
+2026-03-11 17:34:24 [[32MINFO[39M]: Initializing CheckoutPage fixture
+2026-03-11 17:34:24 [[32MINFO[39M]: STEP: Adding product to cart: Sauce Labs Backpack
+2026-03-11 17:34:25 [[32MINFO[39M]: STEP: Clicking shopping cart
+2026-03-11 17:34:26 [[32MINFO[39M]: STEP: Clicking checkout button
+2026-03-11 17:34:27 [[32MINFO[39M]: STEP: Filling checkout information
+2026-03-11 17:34:27 [[32MINFO[39M]: STEP: Entering first name: Jane
+2026-03-11 17:34:28 [[32MINFO[39M]: STEP: Entering last name: Smith
+2026-03-11 17:34:29 [[32MINFO[39M]: STEP: Entering postal code: 67890
+2026-03-11 17:34:30 [[32MINFO[39M]: STEP: Clicking continue button
+2026-03-11 17:34:31 [[32MINFO[39M]: STEP: Getting cart items count in checkout
+2026-03-11 17:34:31 [[32MINFO[39M]: STEP: Getting item total
+2026-03-11 17:34:31 [[32MINFO[39M]: Retrieved text: Item total: $29.99
+2026-03-11 17:34:31 [[32MINFO[39M]: STEP: Getting tax
+2026-03-11 17:34:31 [[32MINFO[39M]: Retrieved text: Tax: $2.40
+2026-03-11 17:34:31 [[32MINFO[39M]: STEP: Getting total amount
+2026-03-11 17:34:32 [[32MINFO[39M]: Retrieved text: Total: $32.39
+2026-03-11 17:34:32 [[32MINFO[39M]: ========== TEST END: should display correct information in checkout overview - PASSED ==========
+2026-03-11 17:34:32 [[32MINFO[39M]: CheckoutPage fixture cleanup
+2026-03-11 17:34:32 [[32MINFO[39M]: CartPage fixture cleanup
+2026-03-11 17:34:32 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:34:32 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:34:32 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login\login.spec.ts" timestamp="2026-03-11T12:00:12.942Z" hostname="chromium" tests="9" failures="0" skipped="0" time="56.111" errors="0">
+<testcase name="Login Tests › should login successfully with valid credentials" classname="login\login.spec.ts" time="6.455">
+<system-out>
+<![CDATA[2026-03-11 17:34:33 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:33 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:34:33 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:33 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:35 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:34:35 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:34:35 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:34:35 [[32MINFO[39M]: STEP: Logging in with username: standard_user
+2026-03-11 17:34:35 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:34:36 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:37 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:38 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:34:38 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:38 [[32MINFO[39M]: ========== TEST END: should login successfully with valid credentials - PASSED ==========
+2026-03-11 17:34:38 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:34:38 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:34:38 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error for locked out user" classname="login\login.spec.ts" time="5.958">
+<system-out>
+<![CDATA[2026-03-11 17:34:39 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:39 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:34:39 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:39 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:41 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:34:41 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:34:41 [[32MINFO[39M]: STEP: Logging in with username: locked_out_user
+2026-03-11 17:34:41 [[32MINFO[39M]: STEP: Entering username: locked_out_user
+2026-03-11 17:34:42 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:43 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:44 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-11 17:34:44 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:44 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:34:44 [[32MINFO[39M]: Retrieved text: Epic sadface: Sorry, this user has been locked out.
+2026-03-11 17:34:44 [[32MINFO[39M]: ========== TEST END: should show error for locked out user - PASSED ==========
+2026-03-11 17:34:44 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:34:44 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error for invalid credentials" classname="login\login.spec.ts" time="5.855">
+<system-out>
+<![CDATA[2026-03-11 17:34:45 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:46 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:34:46 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:46 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:47 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:34:47 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:34:47 [[32MINFO[39M]: STEP: Logging in with username: invalid_user
+2026-03-11 17:34:47 [[32MINFO[39M]: STEP: Entering username: invalid_user
+2026-03-11 17:34:48 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:49 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:50 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-11 17:34:50 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:50 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:34:50 [[32MINFO[39M]: Retrieved text: Epic sadface: Username and password do not match any user in this service
+2026-03-11 17:34:50 [[32MINFO[39M]: ========== TEST END: should show error for invalid credentials - PASSED ==========
+2026-03-11 17:34:50 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:34:50 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error when username is empty" classname="login\login.spec.ts" time="5.793">
+<system-out>
+<![CDATA[2026-03-11 17:34:51 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:51 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:34:51 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:51 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:53 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:34:54 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:34:55 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-11 17:34:55 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:34:55 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:34:56 [[32MINFO[39M]: Retrieved text: Epic sadface: Username is required
+2026-03-11 17:34:56 [[32MINFO[39M]: ========== TEST END: should show error when username is empty - PASSED ==========
+2026-03-11 17:34:56 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error when password is empty" classname="login\login.spec.ts" time="5.343">
+<system-out>
+<![CDATA[2026-03-11 17:34:58 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:34:58 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:34:58 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:34:58 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:34:59 [[32MINFO[39M]: STEP: Entering username: standard_user
+2026-03-11 17:35:01 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:35:02 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-11 17:35:02 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:02 [[32MINFO[39M]: STEP: Getting error message
+2026-03-11 17:35:02 [[32MINFO[39M]: Retrieved text: Epic sadface: Password is required
+2026-03-11 17:35:02 [[32MINFO[39M]: ========== TEST END: should show error when password is empty - PASSED ==========
+2026-03-11 17:35:02 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should display all login page elements" classname="login\login.spec.ts" time="2.429">
+<system-out>
+<![CDATA[2026-03-11 17:35:03 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:35:03 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:35:03 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:35:03 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:35:04 [[32MINFO[39M]: STEP: Verifying login page is loaded
+2026-03-11 17:35:04 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:04 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:04 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:04 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:04 [[32MINFO[39M]: Element enabled: true
+2026-03-11 17:35:04 [[32MINFO[39M]: ========== TEST END: should display all login page elements - PASSED ==========
+2026-03-11 17:35:04 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should be able to close error message" classname="login\login.spec.ts" time="6.897">
+<system-out>
+<![CDATA[2026-03-11 17:35:05 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:35:05 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:35:05 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:35:05 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:35:07 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:35:07 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:35:07 [[32MINFO[39M]: STEP: Logging in with username: invalid_user
+2026-03-11 17:35:07 [[32MINFO[39M]: STEP: Entering username: invalid_user
+2026-03-11 17:35:08 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:35:09 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:35:10 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-11 17:35:10 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:10 [[32MINFO[39M]: STEP: Closing error message
+2026-03-11 17:35:11 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-11 17:35:11 [[32MINFO[39M]: Element visible: false
+2026-03-11 17:35:11 [[32MINFO[39M]: ========== TEST END: should be able to close error message - PASSED ==========
+2026-03-11 17:35:11 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:35:11 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should login with problem user" classname="login\login.spec.ts" time="6.32">
+<system-out>
+<![CDATA[2026-03-11 17:35:12 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:35:12 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:35:12 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:35:12 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:35:14 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:35:14 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:35:14 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:35:14 [[32MINFO[39M]: STEP: Logging in with username: problem_user
+2026-03-11 17:35:14 [[32MINFO[39M]: STEP: Entering username: problem_user
+2026-03-11 17:35:15 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:35:16 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:35:17 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:35:17 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:17 [[32MINFO[39M]: ========== TEST END: should login with problem user - PASSED ==========
+2026-03-11 17:35:17 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:35:17 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:35:17 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should login with performance glitch user" classname="login\login.spec.ts" time="11.061">
+<system-out>
+<![CDATA[2026-03-11 17:35:19 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-11 17:35:19 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-11 17:35:19 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-11 17:35:19 [[32MINFO[39M]: Navigating to: /
+2026-03-11 17:35:20 [[32MINFO[39M]: Initializing HomePage fixture
+2026-03-11 17:35:20 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-11 17:35:20 [[32MINFO[39M]: User data loaded successfully
+2026-03-11 17:35:20 [[32MINFO[39M]: STEP: Logging in with username: performance_glitch_user
+2026-03-11 17:35:20 [[32MINFO[39M]: STEP: Entering username: performance_glitch_user
+2026-03-11 17:35:21 [[32MINFO[39M]: STEP: Entering password
+2026-03-11 17:35:22 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-11 17:35:29 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
+2026-03-11 17:35:29 [[32MINFO[39M]: Element visible: true
+2026-03-11 17:35:29 [[32MINFO[39M]: ========== TEST END: should login with performance glitch user - PASSED ==========
+2026-03-11 17:35:29 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-11 17:35:29 [[32MINFO[39M]: HomePage fixture cleanup
+2026-03-11 17:35:29 [[32MINFO[39M]: LoginPage fixture cleanup
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
