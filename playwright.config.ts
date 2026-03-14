@@ -71,7 +71,7 @@ export default defineConfig({
 
     /* Add Slow Motion */
         launchOptions: {
-      slowMo: 1000,  // 1 second delay
+      slowMo: 4000,  // 4 second delay
     },
   },
 
