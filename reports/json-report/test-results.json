@@ -94,7 +94,7 @@
           "column": 6,
           "specs": [
             {
-              "title": "should login successfully with valid credentials",
+              "title": "Verify login with external user",
               "ok": true,
               "tags": [],
               "tests": [
@@ -109,64 +109,64 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 19953,
+                      "duration": 20924,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "2026-03-14 11:01:26 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
+                          "text": "2026-03-15 20:57:14 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:26 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
+                          "text": "2026-03-15 20:57:14 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:26 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
+                          "text": "2026-03-15 20:57:14 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:26 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
+                          "text": "2026-03-15 20:57:14 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:32 [\u001b[32MINFO\u001b[39M]: Initializing HomePage fixture\r\n"
+                          "text": "2026-03-15 20:57:20 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:32 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
+                          "text": "2026-03-15 20:57:20 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:32 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
+                          "text": "2026-03-15 20:57:20 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: Jagadish_User\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:32 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: standard_user\r\n"
+                          "text": "2026-03-15 20:57:20 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: Jagadish_User\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:32 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: standard_user\r\n"
+                          "text": "2026-03-15 20:57:24 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:36 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
+                          "text": "2026-03-15 20:57:28 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:40 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:44 [\u001b[32MINFO\u001b[39M]: STEP: Verifying inventory page is loaded\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:44 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: STEP: Getting error message\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:44 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should login successfully with valid credentials - PASSED ==========\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: Retrieved text: Epic sadface: Username and password do not match any user in this service\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:44 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: ========== TEST END: Verify login with external user - PASSED ==========\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:44 [\u001b[32MINFO\u001b[39M]: HomePage fixture cleanup\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
                         },
                         {
-                          "text": "2026-03-14 11:01:44 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
+                          "text": "2026-03-15 20:57:32 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-14T05:31:24.671Z",
+                      "startTime": "2026-03-15T15:27:11.929Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -174,656 +174,10 @@
                   "status": "expected"
                 }
               ],
-              "id": "8efa2fccd8b5c3f9e367-dba9b18d22f34d7da679",
+              "id": "8efa2fccd8b5c3f9e367-33bf4234d6e45e55eba4",
               "file": "login/login.spec.ts",
-              "line": 29,
-              "column": 7
-            },
-            {
-              "title": "should show error for locked out user",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 19007,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:01:46 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:46 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:46 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:46 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:51 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:51 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:51 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: locked_out_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:51 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: locked_out_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:55 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:01:59 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:03 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:04 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:04 [\u001b[32MINFO\u001b[39M]: STEP: Getting error message\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:04 [\u001b[32MINFO\u001b[39M]: Retrieved text: Epic sadface: Sorry, this user has been locked out.\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:04 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should show error for locked out user - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:04 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:04 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:31:45.823Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-e9a02535b4bf003fdd43",
-              "file": "login/login.spec.ts",
-              "line": 49,
-              "column": 7
-            },
-            {
-              "title": "should show error for invalid credentials",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 19257,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:02:05 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:05 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:05 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:05 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:10 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:10 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:10 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: invalid_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:10 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: invalid_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:14 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:19 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: STEP: Getting error message\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: Retrieved text: Epic sadface: Username and password do not match any user in this service\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should show error for invalid credentials - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:23 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:32:04.927Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-42a3cf9acc2f9f34ce8c",
-              "file": "login/login.spec.ts",
-              "line": 70,
-              "column": 7
-            },
-            {
-              "title": "should show error when username is empty",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14718,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:02:24 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:24 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:24 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:24 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:29 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:33 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:38 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:38 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:38 [\u001b[32MINFO\u001b[39M]: STEP: Getting error message\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:38 [\u001b[32MINFO\u001b[39M]: Retrieved text: Epic sadface: Username is required\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:38 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should show error when username is empty - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:38 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:32:24.254Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-0ef7016f1a7aebe03b83",
-              "file": "login/login.spec.ts",
-              "line": 91,
-              "column": 7
-            },
-            {
-              "title": "should show error when password is empty",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14738,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:02:39 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:39 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:39 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:39 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:44 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: standard_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:48 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:52 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:52 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:52 [\u001b[32MINFO\u001b[39M]: STEP: Getting error message\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:52 [\u001b[32MINFO\u001b[39M]: Retrieved text: Epic sadface: Password is required\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:52 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should show error when password is empty - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:52 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:32:39.045Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-83ee5d961768dca5e6b6",
-              "file": "login/login.spec.ts",
-              "line": 107,
-              "column": 7
-            },
-            {
-              "title": "should display all login page elements",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 6580,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:02:54 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:54 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:54 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:54 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: STEP: Verifying login page is loaded\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: Element enabled: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should display all login page elements - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:02:59 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:32:53.853Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-32c47389c6a9a19aa363",
-              "file": "login/login.spec.ts",
-              "line": 123,
-              "column": 7
-            },
-            {
-              "title": "should be able to close error message",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 23135,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:03:01 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:01 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:01 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:01 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:06 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:06 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:06 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: invalid_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:06 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: invalid_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:10 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:14 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:18 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:18 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:18 [\u001b[32MINFO\u001b[39M]: STEP: Closing error message\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:22 [\u001b[32MINFO\u001b[39M]: STEP: Checking if error is displayed\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:22 [\u001b[32MINFO\u001b[39M]: Element visible: false\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:22 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should be able to close error message - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:22 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:22 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:33:00.496Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-b2dcf4a960217526ded7",
-              "file": "login/login.spec.ts",
-              "line": 138,
-              "column": 7
-            },
-            {
-              "title": "should login with problem user",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 19158,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:03:24 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:24 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:24 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:24 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:29 [\u001b[32MINFO\u001b[39M]: Initializing HomePage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:29 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:29 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:29 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: problem_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:29 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: problem_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:33 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:37 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:41 [\u001b[32MINFO\u001b[39M]: STEP: Verifying inventory page is loaded\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:41 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:41 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should login with problem user - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:41 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:41 [\u001b[32MINFO\u001b[39M]: HomePage fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:41 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:33:23.719Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-4faa6554779cbb43b784",
-              "file": "login/login.spec.ts",
-              "line": 160,
-              "column": 7
-            },
-            {
-              "title": "should login with performance glitch user",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 23855,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "2026-03-14 11:03:43 [\u001b[32MINFO\u001b[39M]: Initializing LoginPage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:43 [\u001b[32MINFO\u001b[39M]: ========== TEST START: Login Test ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:43 [\u001b[32MINFO\u001b[39M]: STEP: Navigating to login page\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:43 [\u001b[32MINFO\u001b[39M]: Navigating to: /\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:48 [\u001b[32MINFO\u001b[39M]: Initializing HomePage fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:48 [\u001b[32MINFO\u001b[39M]: Initializing UserService fixture\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:48 [\u001b[32MINFO\u001b[39M]: User data loaded successfully\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:48 [\u001b[32MINFO\u001b[39M]: STEP: Logging in with username: performance_glitch_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:48 [\u001b[32MINFO\u001b[39M]: STEP: Entering username: performance_glitch_user\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:52 [\u001b[32MINFO\u001b[39M]: STEP: Entering password\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:03:56 [\u001b[32MINFO\u001b[39M]: STEP: Clicking login button\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:04:05 [\u001b[32MINFO\u001b[39M]: STEP: Verifying inventory page is loaded\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:04:05 [\u001b[32MINFO\u001b[39M]: Element visible: true\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:04:05 [\u001b[32MINFO\u001b[39M]: ========== TEST END: should login with performance glitch user - PASSED ==========\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:04:05 [\u001b[32MINFO\u001b[39M]: UserService fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:04:05 [\u001b[32MINFO\u001b[39M]: HomePage fixture cleanup\r\n"
-                        },
-                        {
-                          "text": "2026-03-14 11:04:05 [\u001b[32MINFO\u001b[39M]: LoginPage fixture cleanup\r\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-14T05:33:42.950Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8efa2fccd8b5c3f9e367-50137d4725ca9c5e4f59",
-              "file": "login/login.spec.ts",
-              "line": 180,
-              "column": 7
+              "line": 201,
+              "column": 8
             }
           ]
         }
@@ -832,9 +186,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-14T05:31:12.142Z",
-    "duration": 175600.189,
-    "expected": 9,
+    "startTime": "2026-03-15T15:26:57.641Z",
+    "duration": 41689.924,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

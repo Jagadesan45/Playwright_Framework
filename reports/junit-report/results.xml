@@ -1,186 +1,24 @@
-<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="0" time="175.600189">
-<testsuite name="login\login.spec.ts" timestamp="2026-03-14T05:31:12.928Z" hostname="chromium" tests="9" failures="0" skipped="0" time="160.401" errors="0">
-<testcase name="Login Tests › should login successfully with valid credentials" classname="login\login.spec.ts" time="19.953">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="41.689924">
+<testsuite name="login\login.spec.ts" timestamp="2026-03-15T15:26:58.699Z" hostname="chromium" tests="1" failures="0" skipped="0" time="20.924" errors="0">
+<testcase name="Login Tests › Verify login with external user" classname="login\login.spec.ts" time="20.924">
 <system-out>
-<![CDATA[2026-03-14 11:01:26 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:01:26 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:01:26 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:01:26 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:01:32 [[32MINFO[39M]: Initializing HomePage fixture
-2026-03-14 11:01:32 [[32MINFO[39M]: Initializing UserService fixture
-2026-03-14 11:01:32 [[32MINFO[39M]: User data loaded successfully
-2026-03-14 11:01:32 [[32MINFO[39M]: STEP: Logging in with username: standard_user
-2026-03-14 11:01:32 [[32MINFO[39M]: STEP: Entering username: standard_user
-2026-03-14 11:01:36 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:01:40 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:01:44 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
-2026-03-14 11:01:44 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:01:44 [[32MINFO[39M]: ========== TEST END: should login successfully with valid credentials - PASSED ==========
-2026-03-14 11:01:44 [[32MINFO[39M]: UserService fixture cleanup
-2026-03-14 11:01:44 [[32MINFO[39M]: HomePage fixture cleanup
-2026-03-14 11:01:44 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should show error for locked out user" classname="login\login.spec.ts" time="19.007">
-<system-out>
-<![CDATA[2026-03-14 11:01:46 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:01:46 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:01:46 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:01:46 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:01:51 [[32MINFO[39M]: Initializing UserService fixture
-2026-03-14 11:01:51 [[32MINFO[39M]: User data loaded successfully
-2026-03-14 11:01:51 [[32MINFO[39M]: STEP: Logging in with username: locked_out_user
-2026-03-14 11:01:51 [[32MINFO[39M]: STEP: Entering username: locked_out_user
-2026-03-14 11:01:55 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:01:59 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:02:03 [[32MINFO[39M]: STEP: Checking if error is displayed
-2026-03-14 11:02:04 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:04 [[32MINFO[39M]: STEP: Getting error message
-2026-03-14 11:02:04 [[32MINFO[39M]: Retrieved text: Epic sadface: Sorry, this user has been locked out.
-2026-03-14 11:02:04 [[32MINFO[39M]: ========== TEST END: should show error for locked out user - PASSED ==========
-2026-03-14 11:02:04 [[32MINFO[39M]: UserService fixture cleanup
-2026-03-14 11:02:04 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should show error for invalid credentials" classname="login\login.spec.ts" time="19.257">
-<system-out>
-<![CDATA[2026-03-14 11:02:05 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:02:05 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:02:05 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:02:05 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:02:10 [[32MINFO[39M]: Initializing UserService fixture
-2026-03-14 11:02:10 [[32MINFO[39M]: User data loaded successfully
-2026-03-14 11:02:10 [[32MINFO[39M]: STEP: Logging in with username: invalid_user
-2026-03-14 11:02:10 [[32MINFO[39M]: STEP: Entering username: invalid_user
-2026-03-14 11:02:14 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:02:19 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:02:23 [[32MINFO[39M]: STEP: Checking if error is displayed
-2026-03-14 11:02:23 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:23 [[32MINFO[39M]: STEP: Getting error message
-2026-03-14 11:02:23 [[32MINFO[39M]: Retrieved text: Epic sadface: Username and password do not match any user in this service
-2026-03-14 11:02:23 [[32MINFO[39M]: ========== TEST END: should show error for invalid credentials - PASSED ==========
-2026-03-14 11:02:23 [[32MINFO[39M]: UserService fixture cleanup
-2026-03-14 11:02:23 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should show error when username is empty" classname="login\login.spec.ts" time="14.718">
-<system-out>
-<![CDATA[2026-03-14 11:02:24 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:02:24 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:02:24 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:02:24 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:02:29 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:02:33 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:02:38 [[32MINFO[39M]: STEP: Checking if error is displayed
-2026-03-14 11:02:38 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:38 [[32MINFO[39M]: STEP: Getting error message
-2026-03-14 11:02:38 [[32MINFO[39M]: Retrieved text: Epic sadface: Username is required
-2026-03-14 11:02:38 [[32MINFO[39M]: ========== TEST END: should show error when username is empty - PASSED ==========
-2026-03-14 11:02:38 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should show error when password is empty" classname="login\login.spec.ts" time="14.738">
-<system-out>
-<![CDATA[2026-03-14 11:02:39 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:02:39 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:02:39 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:02:39 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:02:44 [[32MINFO[39M]: STEP: Entering username: standard_user
-2026-03-14 11:02:48 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:02:52 [[32MINFO[39M]: STEP: Checking if error is displayed
-2026-03-14 11:02:52 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:52 [[32MINFO[39M]: STEP: Getting error message
-2026-03-14 11:02:52 [[32MINFO[39M]: Retrieved text: Epic sadface: Password is required
-2026-03-14 11:02:52 [[32MINFO[39M]: ========== TEST END: should show error when password is empty - PASSED ==========
-2026-03-14 11:02:52 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should display all login page elements" classname="login\login.spec.ts" time="6.58">
-<system-out>
-<![CDATA[2026-03-14 11:02:54 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:02:54 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:02:54 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:02:54 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:02:59 [[32MINFO[39M]: STEP: Verifying login page is loaded
-2026-03-14 11:02:59 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:59 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:59 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:59 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:02:59 [[32MINFO[39M]: Element enabled: true
-2026-03-14 11:02:59 [[32MINFO[39M]: ========== TEST END: should display all login page elements - PASSED ==========
-2026-03-14 11:02:59 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should be able to close error message" classname="login\login.spec.ts" time="23.135">
-<system-out>
-<![CDATA[2026-03-14 11:03:01 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:03:01 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:03:01 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:03:01 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:03:06 [[32MINFO[39M]: Initializing UserService fixture
-2026-03-14 11:03:06 [[32MINFO[39M]: User data loaded successfully
-2026-03-14 11:03:06 [[32MINFO[39M]: STEP: Logging in with username: invalid_user
-2026-03-14 11:03:06 [[32MINFO[39M]: STEP: Entering username: invalid_user
-2026-03-14 11:03:10 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:03:14 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:03:18 [[32MINFO[39M]: STEP: Checking if error is displayed
-2026-03-14 11:03:18 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:03:18 [[32MINFO[39M]: STEP: Closing error message
-2026-03-14 11:03:22 [[32MINFO[39M]: STEP: Checking if error is displayed
-2026-03-14 11:03:22 [[32MINFO[39M]: Element visible: false
-2026-03-14 11:03:22 [[32MINFO[39M]: ========== TEST END: should be able to close error message - PASSED ==========
-2026-03-14 11:03:22 [[32MINFO[39M]: UserService fixture cleanup
-2026-03-14 11:03:22 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should login with problem user" classname="login\login.spec.ts" time="19.158">
-<system-out>
-<![CDATA[2026-03-14 11:03:24 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:03:24 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:03:24 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:03:24 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:03:29 [[32MINFO[39M]: Initializing HomePage fixture
-2026-03-14 11:03:29 [[32MINFO[39M]: Initializing UserService fixture
-2026-03-14 11:03:29 [[32MINFO[39M]: User data loaded successfully
-2026-03-14 11:03:29 [[32MINFO[39M]: STEP: Logging in with username: problem_user
-2026-03-14 11:03:29 [[32MINFO[39M]: STEP: Entering username: problem_user
-2026-03-14 11:03:33 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:03:37 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:03:41 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
-2026-03-14 11:03:41 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:03:41 [[32MINFO[39M]: ========== TEST END: should login with problem user - PASSED ==========
-2026-03-14 11:03:41 [[32MINFO[39M]: UserService fixture cleanup
-2026-03-14 11:03:41 [[32MINFO[39M]: HomePage fixture cleanup
-2026-03-14 11:03:41 [[32MINFO[39M]: LoginPage fixture cleanup
-]]>
-</system-out>
-</testcase>
-<testcase name="Login Tests › should login with performance glitch user" classname="login\login.spec.ts" time="23.855">
-<system-out>
-<![CDATA[2026-03-14 11:03:43 [[32MINFO[39M]: Initializing LoginPage fixture
-2026-03-14 11:03:43 [[32MINFO[39M]: ========== TEST START: Login Test ==========
-2026-03-14 11:03:43 [[32MINFO[39M]: STEP: Navigating to login page
-2026-03-14 11:03:43 [[32MINFO[39M]: Navigating to: /
-2026-03-14 11:03:48 [[32MINFO[39M]: Initializing HomePage fixture
-2026-03-14 11:03:48 [[32MINFO[39M]: Initializing UserService fixture
-2026-03-14 11:03:48 [[32MINFO[39M]: User data loaded successfully
-2026-03-14 11:03:48 [[32MINFO[39M]: STEP: Logging in with username: performance_glitch_user
-2026-03-14 11:03:48 [[32MINFO[39M]: STEP: Entering username: performance_glitch_user
-2026-03-14 11:03:52 [[32MINFO[39M]: STEP: Entering password
-2026-03-14 11:03:56 [[32MINFO[39M]: STEP: Clicking login button
-2026-03-14 11:04:05 [[32MINFO[39M]: STEP: Verifying inventory page is loaded
-2026-03-14 11:04:05 [[32MINFO[39M]: Element visible: true
-2026-03-14 11:04:05 [[32MINFO[39M]: ========== TEST END: should login with performance glitch user - PASSED ==========
-2026-03-14 11:04:05 [[32MINFO[39M]: UserService fixture cleanup
-2026-03-14 11:04:05 [[32MINFO[39M]: HomePage fixture cleanup
-2026-03-14 11:04:05 [[32MINFO[39M]: LoginPage fixture cleanup
+<![CDATA[2026-03-15 20:57:14 [[32MINFO[39M]: Initializing LoginPage fixture
+2026-03-15 20:57:14 [[32MINFO[39M]: ========== TEST START: Login Test ==========
+2026-03-15 20:57:14 [[32MINFO[39M]: STEP: Navigating to login page
+2026-03-15 20:57:14 [[32MINFO[39M]: Navigating to: /
+2026-03-15 20:57:20 [[32MINFO[39M]: Initializing UserService fixture
+2026-03-15 20:57:20 [[32MINFO[39M]: User data loaded successfully
+2026-03-15 20:57:20 [[32MINFO[39M]: STEP: Logging in with username: Jagadish_User
+2026-03-15 20:57:20 [[32MINFO[39M]: STEP: Entering username: Jagadish_User
+2026-03-15 20:57:24 [[32MINFO[39M]: STEP: Entering password
+2026-03-15 20:57:28 [[32MINFO[39M]: STEP: Clicking login button
+2026-03-15 20:57:32 [[32MINFO[39M]: STEP: Checking if error is displayed
+2026-03-15 20:57:32 [[32MINFO[39M]: Element visible: true
+2026-03-15 20:57:32 [[32MINFO[39M]: STEP: Getting error message
+2026-03-15 20:57:32 [[32MINFO[39M]: Retrieved text: Epic sadface: Username and password do not match any user in this service
+2026-03-15 20:57:32 [[32MINFO[39M]: ========== TEST END: Verify login with external user - PASSED ==========
+2026-03-15 20:57:32 [[32MINFO[39M]: UserService fixture cleanup
+2026-03-15 20:57:32 [[32MINFO[39M]: LoginPage fixture cleanup
 ]]>
 </system-out>
 </testcase>
