@@ -193,4 +193,27 @@ test.describe('Login Tests', () => {
     const isHomePageLoaded = await homePage.verifyPageLoaded();
     expect(isHomePageLoaded).toBeTruthy();
   });
+
+  /* 
+  15-03-2026 new scenario (login with external user but same password)
+  */
+
+   test("Verify login with external user",async ({
+   loginPage,
+   userService})=>{
+   //Arrange
+   const user=userService.getStandardUser();
+
+   //Act
+   await loginPage.login('Jagadish_User',user.password);
+
+   //Assert
+   const isErrorDisplayed =await loginPage.isErrorDisplayed();
+   expect(isErrorDisplayed).toBeTruthy();
+
+   const ErrorMessage:String= await loginPage.getErrorMessage();
+   expect(ErrorMessage).toMatch(/Username and password do not match any user in this service/);
+   
+  }); 
+
 });

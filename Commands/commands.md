@@ -43,3 +43,6 @@ npx playwright test --headed --ignore=**/api/**
 # config to run Only UI tests (login + checkout) run with browser visible
 # "test:ui-only": "playwright test src/tests/login src/tests/checkout --headed",
 npm run test:ui-only
+
+# To run specifc test
+npx playwright test --grep "Verify login with external user" --headed
